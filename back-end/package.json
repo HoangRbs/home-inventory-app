@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "migrate": "npx knex migrate:latest",
     "rollback": "npx knex migrate:rollback",
     "seed": "npx knex seed:run"
@@ -21,5 +22,9 @@
     "knex": "^0.21.1",
     "morgan": "^1.10.0",
     "pg": "^8.1.0"
+  },
+  "devDependencies": {
+    "jest": "^26.0.1",
+    "supertest": "^4.0.2"
   }
 }
