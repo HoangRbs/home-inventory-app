@@ -7,6 +7,9 @@ exports.notFoundUrl =(req,res,next) => {
 
 exports.globalErrHandler =(err,req,res,next) => {
   console.error(err.stack);
+  console.log({
+    err: err.err_message
+  });
 
   res.json({
     status: err.err_status,

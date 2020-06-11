@@ -8,6 +8,6 @@ describe('GET /', () => {
         .expect('Content-Type', /json/)
         .expect(200)
 
-    expect(response.body.status).toEqual('success');
+    expect(response.body.status).toBe('success');
   });
 });
