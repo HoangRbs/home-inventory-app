@@ -3,6 +3,7 @@
 const knex = require('knex');
 const knex_config = require('./knexfile');
 
+// with jest , NODE_ENV == "test"
 const connection_env = process.env.NODE_ENV || 'development';
 
 const knex_final_config = knex_config[connection_env];

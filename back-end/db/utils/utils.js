@@ -7,7 +7,7 @@ const createTable_name = (knex,table_name) => {
 }
 
 // city_id ------> id in city table
-const createReference =(tableBuilder,foreignTableName,notNullable = true,localColumnName = '') => {
+const createReference =(tableBuilder,foreignTableName,notNullable = false,localColumnName = '') => {
   const definition = 
     tableBuilder
       .integer(`${localColumnName || foreignTableName}_id`)

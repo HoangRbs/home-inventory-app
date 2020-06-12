@@ -5,7 +5,7 @@ const tableNames = require('./tableNames');
 // be careful to know which table to remove first 
 const orderedTableNames = [
   tableNames.company,
-  tableNames.adress,
+  tableNames.address,
   tableNames.city,
   tableNames.country,
   tableNames.shape,
