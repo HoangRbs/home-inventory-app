@@ -9,7 +9,7 @@ const Knex = require('knex');
 exports.up = async (knex) => {
   // modify existing tables
   await knex.schema.table(tableNames.city,tableBuilder => {
-    createReference(tableBuilder,tableNames.country);
+    createReference(tableBuilder,tableNames.country,true);
   })
 
   // create new tables

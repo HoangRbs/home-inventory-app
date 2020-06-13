@@ -7,4 +7,7 @@ const citiesController = require('../../controllers/citiesController');
 router.route('/')
   .get(citiesController.getAllCities);
 
+router.route('/:id')
+  .get(citiesController.getOneCity);
+
 module.exports = router;
