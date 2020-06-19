@@ -13,20 +13,16 @@ exports.getAllCities = catchAsync(async (req,res,next) => {
 
 exports.getOneCity = catchAsync(async (req,res,next) => {
   const { id } = req.params;
-  if(!isNaN(id)){
-    const [city] = await queries.findById(id);
 
-    if(city){
-      res.json({
-        status: 'success',
-        data: city
-      })
-    }
+  const city = await queries.findById(parseInt(id));
 
-    return next();  // go the the next middleware --> go deep down to the notFoundUrl
+  if(city){
+    return res.json({
+      status: 'success',
+      data: city
+    })
   }
-  else {
-    const err = new AppError('Invalid ID', 422);
-    throw err; // catchAsync catch the error
-  }
+
+  return next();  // go the the next middleware --> go deep down to the notFoundUrl
+
 })
